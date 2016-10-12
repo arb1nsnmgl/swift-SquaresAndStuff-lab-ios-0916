@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,14 +17,38 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="heK-Q7-eCe"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbertEinstein" translatesAutoresizingMaskIntoConstraints="NO" id="cL9-wU-Z4D">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cL9-wU-Z4D" secondAttribute="height" multiplier="1:1" id="S1v-J9-W3A"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cL9-wU-Z4D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JSx-Te-wIc"/>
+                            <constraint firstItem="heK-Q7-eCe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jjb-RX-huO"/>
+                            <constraint firstItem="cL9-wU-Z4D" firstAttribute="height" secondItem="heK-Q7-eCe" secondAttribute="height" multiplier="0.7" id="P72-gY-oSf"/>
+                            <constraint firstItem="cL9-wU-Z4D" firstAttribute="top" secondItem="heK-Q7-eCe" secondAttribute="bottom" multiplier="0.75" id="Tog-5F-KCJ"/>
+                            <constraint firstItem="heK-Q7-eCe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ciy-w5-hMV"/>
+                            <constraint firstItem="heK-Q7-eCe" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="hVu-Lf-uVq"/>
+                            <constraint firstAttribute="trailing" secondItem="heK-Q7-eCe" secondAttribute="trailing" id="rTa-Cw-XYz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="cL9-wU-Z4D" id="THt-uk-TT8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399.19999999999999" y="388.15592203898052"/>
+            <point key="canvasLocation" x="-1203" y="278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AlbertEinstein" width="300" height="320"/>
+        <image name="SpaceShip" width="900" height="563"/>
+    </resources>
 </document>
